@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script src="//unpkg.com/brain.js" defer></script>
-  <script src="script.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="//unpkg.com/brain.js" defer></script>
+    <script src="script.js" defer></script>
 
-  <style>
-
-    body {
-      width: 100%;
-      height: fit-content;
-      margin: 0px;
-      padding: 0px;
-      box-sizing: border-box;
-    }
-
-    .container {
-      width: 100%;
-      height: 100vh;
-      margin: 0 auto 0;
-      background: rgb(230, 227, 221);
-      display: flex;
-      flex-direction: column;
-    }
-
-    #color {
-      /* width: 200px;
-      height: 200px; */
-      border: 5px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 50%;      
-    }
-
-      #color> *{
-        margin:20px 20px;
+    <style>
+      body {
+        width: 100%;
+        height: fit-content;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
       }
 
-    #guess {
-      text-align: center;
-    }      
+      .container {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto 0;
+        background: rgb(230, 227, 221);
+        display: flex;
+        flex-direction: column;
+      }
 
-    .btns{
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      justify-items: center;
+      #color {
+        /* width: 200px;
+      height: 200px; */
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 50%;
+      }
 
-    }
+      #color > * {
+        margin: 20px 20px;
+      }
 
-    
-    .btns > button{
-      margin: 10px;
-      flex: 0 1 24%;
-    }
+      #guess {
+        text-align: center;
+      }
 
-    .btns > p{
-      width: 100%;
-      margin:10px auto 10px;
-      text-align: center;
-    }
+      .hr-line {
+        border: 0.5px dotted grey;
+        width: 100%;
+      }
 
-    .white {
-      color: white;
-    }
+      .btns {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-items: center;
+      }
 
-    #diagram{
-      border: 1px solid grey;
-      max-width: 90%;
-    }
+      .btns > button {
+        margin: 10px;
+        flex: 0 1 24%;
+      }
 
-    #diagram > svg {
-      /* background-color: cyan; */
-    height: auto !important;
-    /* display:block; */
-    max-width: 100% !important;
-    /* position: absolute;
+      .btns > p {
+        width: 100%;
+        margin: 10px auto 10px;
+        text-align: center;
+      }
+
+      .white {
+        color: white;
+      }
+
+      #diagram {
+        border: 1px solid grey;
+        max-width: 90%;
+      }
+
+      #diagram > svg {
+        /* background-color: cyan; */
+        height: auto !important;
+        /* display:block; */
+        max-width: 100% !important;
+        /* position: absolute;
     top:0;
     left:0; */
+      }
 
-    }
+      h6 {
+        text-align: center;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="color">
+        <div class="white">Sample Text Color (White)</div>
+        <div>Sample Text Color (White)</div>
+        <hr class="hr-line" />
+        <div id="guess"></div>
+      </div>
 
-    h6 {
-      text-align: center;
-      margin: 10px;
-    }
+      <div class="btns">
+        <p>
+          說明:
+          透過機器學習的資料庫，讓程式依據當前背景色去找出"對比最強烈"的顏色(黑色或是白色)。
+          一開始需要人為的輸入增加幾筆正確的資料，之後預測的結果會越來越正確
+        </p>
+        <p>正確的對比色為:</p>
+        <button id="white-button">白色 White</button>
+        <button id="black-button">黑色 Black</button>
+        <button id="skip-to-next-button">跳過 Skip this one</button>
+        <button id="print-button">console.log result結果</button>
+      </div>
+      <h6>(猜的次數越多，結果越正確)</h6>
 
-
-  </style>
-</head>
-<body>
-
-  <div class="container">
-
-  <div id="color">
-    <div class="white">White Text</div>
-    <div>Black Text</div>
-    <div id="guess"></div>
-  </div>
-
-  <div class="btns">
-    <p>正確的對比色為:</p>
-    <button id="white-button">白色 White </button>
-    <button id="black-button">黑色 Black</button>
-    <button id="print-button">console.log result結果</button>
-  </div>
-    <h6>(猜的次數越多，結果越正確)</h6>
-
-
-  <div id="diagram">
-  </div>
-
-  </div>
-
-</body>
+      <div id="diagram"></div>
+    </div>
+  </body>
 </html>
